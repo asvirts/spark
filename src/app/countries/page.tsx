@@ -8,13 +8,10 @@ export default async function Index() {
   const { data: countries } = await supabase.from("countries").select();
 
   return (
-    <>
-      <ul className="my-auto text-foreground">
-        {countries?.map((country) => (
-          <li key={country.id}>{country.name}</li>
-        ))}
-      </ul>
-      <input className="mt-3" placeholder="Type a country name"></input>
-    </>
+    <ul className="my-auto text-foreground">
+      {countries?.map((country) => (
+        <li key={country.id}>{country.name}</li>
+      ))}
+    </ul>
   );
 }
