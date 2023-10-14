@@ -12,9 +12,9 @@ export default function UsersList() {
 
   const fetchUsers = async () => {
     const { data: users } = await supabase
-      .from("users")
+      .from("user_id")
       .select("*")
-      .order("id", true);
+      .order("user_id", true);
     setUsers(users);
   };
 
