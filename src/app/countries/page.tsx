@@ -5,13 +5,19 @@ export default async function Index() {
   const cookieStore = cookies();
   const supabase = createServerComponentClient({ cookies: () => cookieStore });
 
-  const { data: countries } = await supabase.from("countries").select();
+  let { data: users, error } = await supabase
+    .from("users")
+    .select("first_name");
+
+  if (error) throw error;
 
   return (
-    <ul className="my-auto text-foreground">
-      {countries?.map((country) => (
-        <li key={country.id}>{country.name}</li>
-      ))}
-    </ul>
+    <div>
+      <ul className="my-auto text-foreground">
+        {users?.map((user) => (
+          <li key={user.first_name}>{user.first_name}</li>
+        ))}
+      </ul>
+    </div>
   );
 }
