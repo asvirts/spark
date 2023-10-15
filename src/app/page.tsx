@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="container flex mx-auto justify-between">
       <div>
-        <h2 className="font-bold ">Users:</h2>
+        <h2 className="font-bold ">Users List:</h2>
         <Index />
       </div>
       <AuthForm />
