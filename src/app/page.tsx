@@ -1,5 +1,5 @@
 import AuthForm from "./AuthForm";
-import Index from "./countries/page";
+import Index from "./users/page";
 
 export default function Home() {
   return (
